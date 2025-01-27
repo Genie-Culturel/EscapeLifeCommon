@@ -3,7 +3,7 @@
 namespace EscapeLife.Models.Messages.Chat
 {
     /// <summary>
-    /// Message sent by the server to the clients containing a youtubeurl to be displayed
+    /// Message sent by the server to the clients containing a Uri to be displayed
     /// </summary>
     public partial class VideoMessage : MessageBase
     {
