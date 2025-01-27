@@ -11,7 +11,7 @@
 ```md
 Parent
 ├── Models
-│   ├── Messages (EscapeLifeMessages)
+│   ├── EscapeLifeMessages
 │   │   ├── Chat
 │   │   │   ├── ...
 │   │   │   └── ...
