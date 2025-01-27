@@ -35,10 +35,16 @@ Parent
 
 ### Global
 
-The classes are defined as partial since some specific logic needs to be added on both the server and the client.
-Makes sure to define the ``Process()`` method of each class in the ``Processors`` folder under the same namespace as the other file.
+#### Guidelines
 
-Example for ``ChatProcessors.cs``:
+Unity requires more imports than ASP.NET, remove non required `using` statements only from Unity to make sure you don't break the Unity side.
+
+#### Environnement specic code
+
+The classes are defined as partial since some specific logic needs to be added on both the server and the client.
+Makes sure to define the `Process()` method of each class that implements `MessageBase` in the `Processors` folder under the same namespace as the other file.
+
+Example for `ChatProcessors.cs`:
 
 ```csharp
 namespace EscapeLife.Models.Messages.Chat
@@ -67,9 +73,10 @@ namespace EscapeLife.Models.Messages.Chat
 }
 ```
 
-### Server
+### Server (ASP.NET)
 
-This git repository is already added into the server git repository (https://github.com/MikleRe/EscapeLifeServer).
+This git repository is already added into the server git repository as a submodule.
+To use it, check the EscapeLifeServer's [README](https://github.com/MikleRe/EscapeLifeServer/blob/main/README.md) file.
 
-### Client
+### Client (Unity)
 
