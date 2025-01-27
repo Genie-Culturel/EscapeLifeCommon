@@ -69,4 +69,7 @@ namespace EscapeLife.Models.Messages.Chat
 
 ### Server
 
+This git repository is already added into the server git repository (https://github.com/MikleRe/EscapeLifeServer).
+
 ### Client
+
