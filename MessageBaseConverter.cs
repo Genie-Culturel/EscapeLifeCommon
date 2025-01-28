@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
-namespace EscapeLife.Messages
+namespace EscapeLifeCommon.Messages
 {
     // https://stackoverflow.com/questions/20995865/deserializing-json-to-abstract-class
 

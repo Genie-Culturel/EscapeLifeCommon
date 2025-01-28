@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Messages.Chat
+﻿namespace EscapeLifeCommon.Messages.Chat
 {
     /// <summary>
     /// Message sent by the server to the clients relating to notify an event with user connection/disconnection 

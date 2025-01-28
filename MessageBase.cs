@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace EscapeLife.Messages
+namespace EscapeLifeCommon.Messages
 {
     /// <summary>
     /// Parent of all our messages sent in a game

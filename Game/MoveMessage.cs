@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EscapeLife.Messages.Game
+namespace EscapeLifeCommon.Messages.Game
 {
     /// <summary>
     /// Message sent by the server to the clients to start a new move step

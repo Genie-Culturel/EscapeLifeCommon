@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EscapeLife.Messages
+namespace EscapeLifeCommon.Messages
 {
     /// <summary>
     /// Message sent by the server to a newly connected client

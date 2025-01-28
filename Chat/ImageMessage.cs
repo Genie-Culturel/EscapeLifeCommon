@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Messages.Chat
+﻿namespace EscapeLifeCommon.Messages.Chat
 {
     /// <summary>
     /// Message sent by both server and clients containning an image
