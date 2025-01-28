@@ -1,4 +1,4 @@
-# EscapeLife
+# EscapeLifeCommon
 
 ## Author
 
@@ -12,7 +12,7 @@ Parent is equals to `EscapeLifeServer/Models` for the server and `Assets/Scripts
 
 ```md
 Parent
-├── EscapeLife
+├── EscapeLifeCommon
 │   ├── Chat
 │   │   ├── ...
 │   │   └── ...
@@ -48,7 +48,7 @@ To do so, create a `Processors` folder under the parent folder with the same nam
 Example for `ChatProcessors.cs`:
 
 ```csharp
-namespace EscapeLife.Models.Messages.Chat
+namespace EscapeLifeCommon.Messages.Chat
 {
     public partial class EventMessage
     {
@@ -75,10 +75,10 @@ Clone this repository under `/Assets/Scripts/`:
 
 ```bash
 cd /Assets/Scripts/
-git clone https://github.com/MikleRe/EscapeLife.git
+git clone https://github.com/MikleRe/EscapeLifeCommon.git
 ```
 
-Remember that `/Assets/Scripts/EscapeLife` should be ignored in Plastic.
+Remember that `/Assets/Scripts/EscapeLifeCommon` should be ignored in Plastic.
 
 ## File Structure
 
