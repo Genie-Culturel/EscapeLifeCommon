@@ -1,7 +1,0 @@
-{
-    "name": "ch.genieculturel.escapelife",
-    "author": "Dan Simonin",
-    "displayName": "EscapeLife",
-    "description": "Definition of shared implementation for EscapeLife's server and clients!",
-    "version": "0.0.2"
-  }
