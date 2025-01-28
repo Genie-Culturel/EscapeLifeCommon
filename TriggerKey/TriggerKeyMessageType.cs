@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Models.Messages.TriggerKey
+﻿namespace EscapeLife.Messages.TriggerKey
 {
     public enum TriggerKeyMessageType
     {

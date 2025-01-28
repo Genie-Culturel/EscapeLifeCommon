@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace EscapeLife.Models.Messages
+namespace EscapeLife.Messages
 {
     /// <summary>
     /// Parent of all our messages sent in a game
@@ -27,7 +27,7 @@ namespace EscapeLife.Models.Messages
         public string MessageType { get; set; }
 
         // Custom process for each method
-        public abstract void Process();
+        public virtual void Process() { }
 
         public override string ToString()
         {

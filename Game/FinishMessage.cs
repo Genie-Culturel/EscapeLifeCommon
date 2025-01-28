@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Models.Messages.Game
+﻿namespace EscapeLife.Messages.Game
 {
     /// <summary>
     /// Message sent by the server to the clients to finish a game

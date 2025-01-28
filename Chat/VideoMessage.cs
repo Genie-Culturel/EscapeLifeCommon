@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EscapeLife.Models.Messages.Chat
+namespace EscapeLife.Messages.Chat
 {
     /// <summary>
     /// Message sent by the server to the clients containing a Uri to be displayed

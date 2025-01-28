@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Models.Messages.Game
+﻿namespace EscapeLife.Messages.Game
 {
     /// <summary>
     /// Message sent by the client to the server to tell them where there are during a move step

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EscapeLife.Models.Messages.Game
+namespace EscapeLife.Messages.Game
 {
     /// <summary>
     /// Message sent by the server to the clients to start a new enigma step

@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Models.Messages.Chat
+﻿namespace EscapeLife.Messages.Chat
 {
     /// <summary>
     /// Message sent by both server and clients containning a text

@@ -1,4 +1,4 @@
-﻿namespace EscapeLife.Models.Messages.TriggerKey
+﻿namespace EscapeLife.Messages.TriggerKey
 {
     /// <summary>
     /// Message sent by both the client (Type=Query) and server (Type=Success||Failure) for TriggerKey management
