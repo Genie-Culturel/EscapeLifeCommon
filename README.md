@@ -1,4 +1,4 @@
-# EscapeLifeMessages
+# EscapeLife
 
 ## Author
 
@@ -8,29 +8,29 @@
 
 ### Common usage file structure
 
+Parent is equals to `EscapeLifeServer/Models` for the server and `Assets/Scripts/` for the client.
+
 ```md
 Parent
-├── Models
-│   ├── EscapeLifeMessages
-│   │   ├── Chat
-│   │   │   ├── ...
-│   │   │   └── ...
-│   │   ├── Game
-│   │   │   ├── ...
-│   │   │   └── ...
-│   │   ├── TriggerKey
-│   │   │   ├── ...
-│   │   │   └── ...
-│   │   ├── MessageBase.cs
-│   │   ├── MessageBaseConverter.cs
-│   │   └── SetupMessage.cs
-│   └── Processors
-│       ├── ChatProcessors.cs
-│       ├── GameProcessors.cs
-│       ├── TriggerKeyProcessors.cs
-│       ├── MessageBase.cs
-│       └── SetupMessage.cs
-.
+├── EscapeLife
+│   ├── Chat
+│   │   ├── ...
+│   │   └── ...
+│   ├── Game
+│   │   ├── ...
+│   │   └── ...
+│   ├── TriggerKey
+│   │   ├── ...
+│   │   └── ...
+│   ├── MessageBase.cs
+│   ├── MessageBaseConverter.cs
+│   └── SetupMessage.cs
+└── Processors
+│   ├── ChatProcessors.cs
+.   ├── GameProcessors.cs
+.   ├── TriggerKeyProcessors.cs
+    ├── MessageBase.cs
+    └── SetupMessage.cs
 ```
 
 ### Global
@@ -42,7 +42,8 @@ Unity requires more imports than ASP.NET, remove non required `using` statements
 #### Environnement specic code
 
 The classes are defined as partial since some specific logic needs to be added on both the server and the client.
-Makes sure to define the `Process()` method of each class that implements `MessageBase` in the `Processors` folder under the same namespace as the other file.
+By overriding the `Process()` method of a class that implements `MessageBase`, you can write specific environnement code. 
+To do so, create a `Processors` folder under the parent folder with the same namespace as the other file.
 
 Example for `ChatProcessors.cs`:
 
@@ -60,16 +61,6 @@ namespace EscapeLife.Models.Messages.Chat
     {
         public override void Process() => throw new NotImplementedException();
     }
-
-    public partial class TextMessage
-    {
-        public override void Process() => throw new NotImplementedException();
-    }
-
-    public partial class VideoMessage
-    {
-        public override void Process() => throw new NotImplementedException();
-    }
 }
 ```
 
@@ -80,3 +71,4 @@ To use it, check the EscapeLifeServer's [README](https://github.com/MikleRe/Esca
 
 ### Client (Unity)
 
+The git repository is cloned inside the Project under `Assets/Scripts/EscapeLife`.
