@@ -71,12 +71,11 @@ To use it, check the EscapeLifeServer's [README](https://github.com/MikleRe/Esca
 
 ### Client (Unity)
 
-Clone this repository under `/Assets/Scripts/` on commit `3c2db94`:
+Clone this repository under `/Assets/Scripts/`:
 
 ```bash
 cd /Assets/Scripts/
 git clone https://github.com/MikleRe/EscapeLife.git
-git checkout 3c2db94
 ```
 
 Remember that `/Assets/Scripts/EscapeLife` is ignored in Plastic.
