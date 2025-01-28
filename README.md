@@ -78,7 +78,7 @@ cd /Assets/Scripts/
 git clone https://github.com/MikleRe/EscapeLife.git
 ```
 
-Remember that `/Assets/Scripts/EscapeLife` is ignored in Plastic.
+Remember that `/Assets/Scripts/EscapeLife` should be ignored in Plastic.
 
 ## File Structure
 
