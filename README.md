@@ -6,33 +6,6 @@
 
 ## How to Use
 
-### Common usage file structure
-
-Parent is equals to `EscapeLifeServer/Models` for the server and `Assets/Scripts/` for the client.
-
-```md
-Parent
-├── EscapeLifeCommon
-│   ├── Chat
-│   │   ├── ...
-│   │   └── ...
-│   ├── Game
-│   │   ├── ...
-│   │   └── ...
-│   ├── TriggerKey
-│   │   ├── ...
-│   │   └── ...
-│   ├── MessageBase.cs
-│   ├── MessageBaseConverter.cs
-│   └── SetupMessage.cs
-└── Processors
-│   ├── ChatProcessors.cs
-.   ├── GameProcessors.cs
-.   ├── TriggerKeyProcessors.cs
-    ├── MessageBase.cs
-    └── SetupMessage.cs
-```
-
 ### Global
 
 #### Guidelines
@@ -41,25 +14,34 @@ Unity requires more imports than ASP.NET, remove non required `using` statements
 
 #### Environnement specic code
 
-The classes are defined as partial since some specific logic needs to be added on both the server and the client.
-By overriding the `Process()` method of a class that implements `MessageBase`, you can write specific environnement code. 
-To do so, create a `Processors` folder under the parent folder with the same namespace as the other file.
+Since specific logic needs to be applied from both server and client, the classes are partial and extension methods are added.
+
+The partial implementation only work on the server side as EscapeLifeCommon is placed in the same assembly.
+To solve the issue for the Unity side, where git packages are placed in another assembly, extension methods are added to process a method after receiving it.
+
+-> todo
 
 Example for `ChatProcessors.cs`:
 
 ```csharp
-namespace EscapeLifeCommon.Messages.Chat
+namespace EscapeLifeCommon.Messages.Connection
 {
-    public partial class EventMessage
+    public static class ConnectionSuccessfulProcessor
     {
-        public override void Process() {
-            // your code here
+        public static void Process(this ConnectionSuccessfulMessage m)
+        {
+            Debug.Log($"Connection to game '{m.GameId}' Successful!");
+            MainMenuEvents.MissionScreenShown?.Invoke();
         }
     }
 
-    public partial class ImageMessage
+    public static class ConnectionFailedProcessor
     {
-        public override void Process() => throw new NotImplementedException();
+        public static async void Process(this ConnectionFailedMessage m)
+        {
+            Debug.Log($"Connection Failed: {m.ConnectionFailedType} !");
+            await WebSocketManager.Instance.Close();
+        }
     }
 }
 ```
