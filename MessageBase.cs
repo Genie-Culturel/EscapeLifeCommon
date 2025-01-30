@@ -26,9 +26,6 @@ namespace EscapeLifeCommon.Messages
         // Type of message (used for json conversion, do not touch it)
         public string MessageType { get; set; }
 
-        // Custom process for each method
-        public virtual void Process() { }
-
         public override string ToString()
         {
             return $"{Sender} sent at {SentAt.ToShortTimeString()} in GameId {GameId}";

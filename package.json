@@ -1,6 +1,9 @@
 {
     "name": "ch.genieculturel.escapelifecommon",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "displayName": "EscapeLife Common",
-    "description": "EscapeLife messages definitions."
+    "description": "EscapeLife messages definitions.",
+    "author": {
+        "name": "MikleRe"
+    }
 }
