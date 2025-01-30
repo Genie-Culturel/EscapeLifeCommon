@@ -19,9 +19,7 @@ Since specific logic needs to be applied from both server and client, the classe
 The partial implementation only work on the server side as EscapeLifeCommon is placed in the same assembly.
 To solve the issue for the Unity side, where git packages are placed in another assembly, extension methods are added to process a method after receiving it.
 
--> todo
-
-Example for `ChatProcessors.cs`:
+Example for ConnectionProcessors.cs`:
 
 ```csharp
 namespace EscapeLifeCommon.Messages.Connection
@@ -46,6 +44,9 @@ namespace EscapeLifeCommon.Messages.Connection
 }
 ```
 
+This approach needed more work when calling `Process` for a `MessageBase` object since extension methods do not work with polymorphism.
+A `MessageBaseProcessor.cs` resides in the server and client and resolves the concrete class `Process` method using reflection when calling `MessageBase.Process()`.
+
 ### Server (ASP.NET)
 
 This git repository is already added into the server git repository as a submodule.
@@ -53,14 +54,7 @@ To use it, check the EscapeLifeServer's [README](https://github.com/MikleRe/Esca
 
 ### Client (Unity)
 
-Clone this repository under `/Assets/Scripts/`:
-
-```bash
-cd /Assets/Scripts/
-git clone https://github.com/MikleRe/EscapeLifeCommon.git
-```
-
-Remember that `/Assets/Scripts/EscapeLifeCommon` should be ignored in Plastic.
+This git repository is added as a Unity Package from git directly!
 
 ## File Structure
 
@@ -69,13 +63,16 @@ This allows Newtonsoft (JSON library) to serialize a message, send it and then, 
 
 - **MessageBase.cs**: Abstract class that defines the common variables and functions of all message type.
 - **MessageBaseConverter.cs**: A Newtonsoft converter that allows to deserialize any message to its concrete message class.
-- **SetupMessage.cs**: Message sent to newly connected users with data relating to the state of the game.
 
 The Chat folder contains all the messages that will be displayed in the chat:
  - **EventMessage.cs**: Relating to a connection or disconnection of a certain user. (Server->Client)
  - **ImageMessage.cs**: An image sent as message in Base64. (All->All)
  - **TextMessage.cs**: Basic text message. (All->All)
  - **VideoMessage.cs**: A video sent as a URI. (Server->Client)
+
+The Connection folder contains all the messages that will be sent to answer a connection:
+ - **ConnectionFailedMessage.cs**: Sent to a user that tries to connect to a game that does not exists, is not valid or that is username is not valid. 
+ - **ConnectionSuccessfulMessage.cs**: Sent to a user that connected successfuly with data relating to the state of the game.
 
 The Game folder contains all the messages relating to the development of the game:
  - **CoordinatesMessage.cs**: Current coordinates. (Client->Server)
