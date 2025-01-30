@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace EscapeLifeCommon.Messages
+namespace EscapeLifeCommon.Messages.Connection
 {
     /// <summary>
     /// Message sent by the server to a newly connected client
     /// </summary>
-    public partial class SetupMessage : MessageBase
+    public partial class ConnectionSuccessfulMessage : MessageBase
     {
         public List<MessageBase> VideoMessages { get; set; }
         public MessageBase CurrentStepMessage { get; set; }
