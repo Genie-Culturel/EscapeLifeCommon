@@ -9,6 +9,7 @@ namespace EscapeLifeCommon.Messages.Connection
     {
         public List<MessageBase> VideoMessages { get; set; }
         public MessageBase CurrentStepMessage { get; set; }
+        public string ConnectedAs { get; set; }
 
         public override string ToString()
         {
@@ -17,7 +18,7 @@ namespace EscapeLifeCommon.Messages.Connection
             if (CurrentStepMessage != null)
                 currentStepType = CurrentStepMessage.MessageType;
 
-            return $"{base.ToString()} a {GetType().Name} with '{VideoMessages.Count}' video messages and current step message type '{currentStepType}'";
+            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with '{VideoMessages.Count}' video messages and current step message type '{currentStepType}'";
         }
     }
 }
