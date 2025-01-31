@@ -3,6 +3,7 @@
     /// <summary>
     /// Message sent by both server and clients containning an image
     /// </summary>
+    [Serializable]
     public partial class ImageMessage : MessageBase
     {
         public string Base64Image { get; set; }

@@ -3,6 +3,7 @@
     /// <summary>
     /// Message sent by the server to the clients relating to notify an event with user connection/disconnection 
     /// </summary>
+    [Serializable]
     public partial class EventMessage : MessageBase
     {
         public string Username { get; set; }
