@@ -7,7 +7,7 @@ namespace EscapeLifeCommon.Messages.Connection
     /// </summary>
     public partial class ConnectionSuccessfulMessage : MessageBase
     {
-        public List<MessageBase> VideoMessages { get; set; }
+        public List<MessageBase> ChatMessages { get; set; }
         public MessageBase CurrentStepMessage { get; set; }
         public string ConnectedAs { get; set; }
 
@@ -18,7 +18,7 @@ namespace EscapeLifeCommon.Messages.Connection
             if (CurrentStepMessage != null)
                 currentStepType = CurrentStepMessage.MessageType;
 
-            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with '{VideoMessages.Count}' video messages and current step message type '{currentStepType}'";
+            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with '{ChatMessages.Count}' chat messages and current step message type '{currentStepType}'";
         }
     }
 }
