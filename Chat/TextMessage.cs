@@ -3,7 +3,7 @@
 namespace EscapeLifeCommon.Messages.Chat
 {
     /// <summary>
-    /// Message sent by both server and clients containning a text
+    /// Message sent and written by both server and clients containning a text
     /// </summary>
     [Serializable]
     public partial class TextMessage : MessageBase
