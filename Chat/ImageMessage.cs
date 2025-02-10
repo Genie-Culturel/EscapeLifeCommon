@@ -9,10 +9,11 @@ namespace EscapeLifeCommon.Messages.Chat
     public partial class ImageMessage : MessageBase
     {
         public string Base64Image { get; set; }
+        public string Extension { get; set; }
 
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with Base64Image '{Base64Image}'";
+            return $"{base.ToString()} a {GetType().Name} with Base64Image '{Base64Image}' with Extension '{Extension}'";
         }
     }
 }
