@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EscapeLifeCommon.Messages.Chat
 {
@@ -8,13 +9,11 @@ namespace EscapeLifeCommon.Messages.Chat
     [Serializable]
     public partial class AutomaticMessage : MessageBase
     {
-        public string TextFr { get; set; }
-        public string TextEn { get; set; }
-        public string TextGe { get; set; }
+        public Dictionary<string, string> LocalizedStrings = new();
 
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with TextFr '{TextFr}', TextEn '{TextEn}' and TextGe '{TextGe}'";
+            return $"{base.ToString()} a {GetType().Name} with {LocalizedStrings.Count} localized strings";
         }
     }
 }
