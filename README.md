@@ -61,10 +61,13 @@ This git repository is added as a Unity Package from git directly!
 Definitions of the messages that are sent between the server and the client, those implementations need to be shared between both of the parties. 
 This allows Newtonsoft (JSON library) to serialize a message, send it and then, on the other side, deserialize it back.
 
+- **EscapeLifeCommon.asmdef**: Definition of the assembly.
+- **package.json**: Definition of the Unity package.
 - **MessageBase.cs**: Abstract class that defines the common variables and functions of all message type.
 - **MessageBaseConverter.cs**: A Newtonsoft converter that allows to deserialize any message to its concrete message class.
 
 The Chat folder contains all the messages that will be displayed in the chat:
+ - **AutomaticMessage.cs**: Messages that have localized strings. (Server->Client)
  - **EventMessage.cs**: Relating to a connection or disconnection of a certain user. (Server->Client)
  - **ImageMessage.cs**: An image sent as message in Base64. (All->All)
  - **TextMessage.cs**: Basic text message. (All->All)
