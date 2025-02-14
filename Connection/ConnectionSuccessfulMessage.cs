@@ -10,6 +10,7 @@ namespace EscapeLifeCommon.Messages.Connection
         public List<MessageBase> ChatMessages { get; set; }
         public MessageBase CurrentStepMessage { get; set; }
         public string ConnectedAs { get; set; }
+        public string Site { get; set; }
 
         public override string ToString()
         {
@@ -18,7 +19,7 @@ namespace EscapeLifeCommon.Messages.Connection
             if (CurrentStepMessage != null)
                 currentStepType = CurrentStepMessage.MessageType;
 
-            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with '{ChatMessages.Count}' chat messages and current step message type '{currentStepType}'";
+            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with Site '{Site}', '{ChatMessages.Count}' chat messages and current step message type '{currentStepType}'";
         }
     }
 }
