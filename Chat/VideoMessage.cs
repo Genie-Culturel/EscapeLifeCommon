@@ -8,12 +8,11 @@ namespace EscapeLifeCommon.Messages.Chat
     [Serializable]
     public partial class VideoMessage : MessageBase
     {
-        public Uri URL { get; set; }
         public string Name { get; set; }
             
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with URL '{URL}' and Name '{Name}'";
+            return $"{base.ToString()} a {GetType().Name} with Name '{Name}'";
         }
     }
 }
