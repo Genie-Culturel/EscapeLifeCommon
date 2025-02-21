@@ -11,6 +11,7 @@ namespace EscapeLifeCommon.Messages.Game
         public string FromCoordinates { get; set; }
         public string ToCoordinates { get; set; }
         public TimeSpan? TargetTime { get; set; }
+        public string VideoName { get; set;}
 
         public override string ToString()
         {
