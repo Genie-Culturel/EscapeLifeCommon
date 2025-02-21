@@ -22,7 +22,7 @@ namespace EscapeLifeCommon.Messages
         public string Sender { get; set; }
 
         // In which game
-        public int GameId { get; set; }
+        public int GameId { get; set; } = -1;
 
         // Type of message (used for json conversion, do not touch it)
         public string MessageType { get; set; }
