@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using EscapeLifeCommon.Messages.Game;
 
 namespace EscapeLifeCommon.Messages.Connection
 {
@@ -14,12 +15,7 @@ namespace EscapeLifeCommon.Messages.Connection
 
         public override string ToString()
         {
-            string currentStepType = "null";
-
-            if (CurrentStepMessage != null)
-                currentStepType = CurrentStepMessage.MessageType;
-
-            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with Site '{Site}', '{MoveMessages.Count}' move messages and StartedAt '{(StartedAt?.ToShortTimeString() ?? "null")}'";
+            return $"{base.ToString()} a {GetType().Name} for '{ConnectedAs}' with Site '{Site}', '{MoveMessages.Count}' move messages and StartedAt '{StartedAt?.ToShortTimeString() ?? "null"}'";
         }
     }
 }
