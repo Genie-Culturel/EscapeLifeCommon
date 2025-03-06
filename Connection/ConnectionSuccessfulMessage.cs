@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using EscapeLifeCommon.Messages.Game;
+using System;
 
 namespace EscapeLifeCommon.Messages.Connection
 {
