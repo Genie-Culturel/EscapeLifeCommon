@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EscapeLifeCommon.Messages.Chat
 {
@@ -8,11 +9,11 @@ namespace EscapeLifeCommon.Messages.Chat
     [Serializable]
     public partial class VideoMessage : MessageBase
     {
-        public string Name { get; set; }
+        public Dictionary<string, string> LocalizedVideoNames = new();
             
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with Name '{Name}'";
+            return $"{base.ToString()} a {GetType().Name} with {LocalizedVideoNames.Count} localized video names.";
         }
     }
 }
