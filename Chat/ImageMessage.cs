@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EscapeLifeCommon.Messages.Chat
 {
@@ -8,12 +9,12 @@ namespace EscapeLifeCommon.Messages.Chat
     [Serializable]
     public partial class ImageMessage : MessageBase
     {
-        public string Base64Image { get; set; }
+        public Dictionary<string, string> LocalizedBase64 = new();
         public string Extension { get; set; }
 
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with Base64Image '{Base64Image}' with Extension '{Extension}'";
+            return $"{base.ToString()} a {GetType().Name} with {LocalizedStrings.Count} localized Base64 images with Extension '{Extension}'";
         }
     }
 }
