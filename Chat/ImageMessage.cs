@@ -14,7 +14,7 @@ namespace EscapeLifeCommon.Messages.Chat
 
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with {LocalizedStrings.Count} localized Base64 images with Extension '{Extension}'";
+            return $"{base.ToString()} a {GetType().Name} with {LocalizedBase64.Count} localized Base64 images with Extension '{Extension}'";
         }
     }
 }
