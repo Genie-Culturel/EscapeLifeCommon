@@ -4,6 +4,7 @@
     {
         Query,
         Success,
+        TriggerKeySuccess,
         Failure
     }
 }
