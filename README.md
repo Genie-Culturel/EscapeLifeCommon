@@ -8,6 +8,10 @@
 
 ### Global
 
+### Dependecies
+
+ - Newtonsoft ([For Unity](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.2/manual/index.html))
+
 #### Guidelines
 
 Unity requires more imports than ASP.NET, remove non required `using` statements only from Unity to make sure you don't break the Unity side.
@@ -19,7 +23,7 @@ Since specific logic needs to be applied from both server and client, the classe
 The partial implementation only work on the server side as EscapeLifeCommon is placed in the same assembly.
 To solve the issue for the Unity side, where git packages are placed in another assembly, extension methods are added to process a method after receiving it.
 
-Example for ConnectionProcessors.cs`:
+Example for `ConnectionProcessors.cs`:
 
 ```csharp
 namespace EscapeLifeCommon.Messages.Connection
@@ -75,6 +79,7 @@ The Chat folder contains all the messages that will be displayed in the chat:
 
 The Connection folder contains all the messages that will be sent to answer a connection:
  - **ConnectionFailedMessage.cs**: Sent to a user that tries to connect to a game that does not exists, is not valid or that is username is not valid. 
+ - **ConnectionFailedType.cs**: Enum of causes why the connection was failed.
  - **ConnectionSuccessfulMessage.cs**: Sent to a user that connected successfuly with data relating to the state of the game.
 
 The Game folder contains all the messages relating to the development of the game:
@@ -84,4 +89,4 @@ The Game folder contains all the messages relating to the development of the gam
  - **MoveMessage.cs**: Start of a move step. (Server->Client)
 
 The TriggerKey folder contains the messages relating to trigger keys:
- - **TriggerKeyMessage.cs**: Used to test a Trigger Key with ``Type=TriggerKeyMessageType.Query`` (Client->Server) and to answer a query with ``Type=TriggerKeyMessageType.Success`` or ``Type=TriggerKeyMessageType.Failure`` (Server->Client).  
+ - **TriggerKeyMessage.cs**: Used to test a Trigger Key with ``Type=TriggerKeyMessageType.Query`` (Client->Server) and to answer a query with ``Type=TriggerKeyMessageType.Success``, ``Type=TriggerKeyMessageType.TriggerSuccess`` or ``Type=TriggerKeyMessageType.Failure`` (Server->Client).  
