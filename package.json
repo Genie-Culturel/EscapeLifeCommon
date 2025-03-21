@@ -3,7 +3,6 @@
     "version": "0.3.0",
     "displayName": "EscapeLife Common",
     "description": "EscapeLife messages definitions.",
-    "hideInEditor": false,
     "author": {
         "name": "MikleRe"
     }
