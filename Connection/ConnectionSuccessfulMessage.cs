@@ -13,6 +13,7 @@ namespace EscapeLifeCommon.Messages.Connection
         public DateTime? StartedAt { get; set;}
         public string ConnectedAs { get; set; }
         public string Site { get; set; }
+        public string CurrentStep { get; set; }
 
         public override string ToString()
         {
