@@ -8,6 +8,7 @@ namespace EscapeLifeCommon.Messages.Game
     public partial class EnigmaMessage : MessageBase
     {
         public string Name { get; set; }
+        public int StepIndex { get; set; }
         public TimeSpan? TargetTime { get; set; }
 
         public override string ToString()

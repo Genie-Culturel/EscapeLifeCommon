@@ -9,6 +9,7 @@ namespace EscapeLifeCommon.Messages.Game
     public partial class MoveMessage : MessageBase
     {
         public string Name { get; set; }
+        public int StepIndex { get; set; }
         public string FromCoordinates { get; set; }
         public string ToCoordinates { get; set; }
         public TimeSpan? TargetTime { get; set; }
