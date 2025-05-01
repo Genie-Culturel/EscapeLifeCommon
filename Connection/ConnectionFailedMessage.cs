@@ -8,6 +8,33 @@ namespace EscapeLifeCommon.Messages.Connection
     public partial class ConnectionFailedMessage : MessageBase
     {
         public ConnectionFailedType ConnectionFailedType;
+        
+        public static ConnectionFailedMessage GameInvalid() {
+            return new ConnectionFailedMessage
+            {
+                Sender = "System",
+                GameId = -1,
+                ConnectionFailedType = ConnectionFailedType.GameInvalid
+            };
+        }
+        
+        public static ConnectionFailedMessage GameNotFound() {
+            return new ConnectionFailedMessage
+            {
+                Sender = "System",
+                GameId = -1,
+                ConnectionFailedType = ConnectionFailedType.GameNotFound
+            };
+        }
+        
+        public static ConnectionFailedMessage UsernameInvalid() {
+            return new ConnectionFailedMessage
+            {
+                Sender = "System",
+                GameId = -1,
+                ConnectionFailedType = ConnectionFailedType.UsernameInvalid
+            };
+        }
 
         public override string ToString()
         {
