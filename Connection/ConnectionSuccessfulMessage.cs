@@ -14,6 +14,7 @@ namespace EscapeLifeCommon.Messages.Connection
         public string ConnectedAs { get; set; }
         public string Site { get; set; }
         public string CurrentStep { get; set; }
+        public List<MessageBase> ChatMessages { get; set; }
 
         public override string ToString()
         {
