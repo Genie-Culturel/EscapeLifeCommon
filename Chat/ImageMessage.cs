@@ -7,14 +7,12 @@ namespace EscapeLifeCommon.Messages.Chat
     /// Message sent by both server and clients containning an image
     /// </summary>
     [Serializable]
-    public partial class ImageMessage : MessageBase
-    {
-        public Dictionary<string, string> LocalizedBase64 = new();
-        public string Extension { get; set; }
+    public partial class ImageMessage : MessageBase {
+        public Dictionary<string, string> LocalizedImageNames = new();
 
         public override string ToString()
         {
-            return $"{base.ToString()} a {GetType().Name} with {LocalizedBase64.Count} localized Base64 images with Extension '{Extension}'";
+            return $"{base.ToString()} a {GetType().Name} with {LocalizedImageNames.Count} localized image names.";
         }
     }
 }

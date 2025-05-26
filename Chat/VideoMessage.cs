@@ -7,8 +7,7 @@ namespace EscapeLifeCommon.Messages.Chat
     /// Message sent by the server to the clients containing a Uri to be displayed
     /// </summary>
     [Serializable]
-    public partial class VideoMessage : MessageBase
-    {
+    public partial class VideoMessage : MessageBase {
         public Dictionary<string, string> LocalizedVideoNames = new();
             
         public override string ToString()
