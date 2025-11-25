@@ -26,7 +26,7 @@ namespace EscapeLifeCommon.Messages
 
         // Type of message (used for json conversion, do not touch it)
         public string MessageType { get; set; }
-
+        
         public override string ToString()
         {
             return $"{Sender} sent at {SentAt.ToShortTimeString()} in GameId {GameId}";
@@ -40,5 +40,6 @@ namespace EscapeLifeCommon.Messages
             string baseNamespace = typeof(MessageBase).Namespace;
             MessageType = fullTypeName.Replace(baseNamespace + ".", "");
         }
+        public Dictionary<string, string>? AudioUrls { get; set; }
     }
 }
