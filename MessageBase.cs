@@ -26,6 +26,8 @@ namespace EscapeLifeCommon.Messages
 
         // Type of message (used for json conversion, do not touch it)
         public string MessageType { get; set; }
+        // Localized audio urls if any
+        public Dictionary<string, string>? AudioUrls { get; set; }
 
         public override string ToString()
         {
