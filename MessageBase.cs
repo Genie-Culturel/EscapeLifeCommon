@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Runtime.Serialization;
+using System.Collections.Generic;
 
 namespace EscapeLifeCommon.Messages
 {
