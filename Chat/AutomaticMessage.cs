@@ -12,9 +12,6 @@ namespace EscapeLifeCommon.Messages.Chat
     {
         public Dictionary<string, string> LocalizedStrings = new();
 
-        // NEW: optional audio per language
-        public Dictionary<string, string> AudioUrls = new();
-
         public override string ToString()
         {
             return $"{base.ToString()} a {GetType().Name} " +
