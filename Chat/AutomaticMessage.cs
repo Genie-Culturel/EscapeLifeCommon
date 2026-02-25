@@ -13,7 +13,7 @@ namespace EscapeLifeCommon.Messages.Chat
         public Dictionary<string, string> LocalizedStrings = new();
 
         // NEW: optional audio per language
-        public Dictionary<string, string> AudioUrls { get; set; } = new();
+        public Dictionary<string, string> AudioUrls = new();
 
         public override string ToString()
         {
